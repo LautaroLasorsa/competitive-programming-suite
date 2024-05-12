@@ -1,0 +1,1 @@
+cp $1.py $1.print; for x in $1*.in; do echo ARCHIVO: $x; cat $x; echo ===; python3 $1.py<$x; echo ===; done | tee -a $1.print

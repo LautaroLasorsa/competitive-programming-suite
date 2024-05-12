@@ -1,0 +1,2 @@
+g++ -Wall -Wextra -Wshadow -Wconversion -D_GLIBCXX_DEBUG -std=c++2a -g -ggdb3 -o $1 $1.cpp -DACMTUYO
+cp $1.cpp $1.print; for x in $1*.in; do echo ARCHIVO: $x; cat $x; echo ===; ./$1<$x; echo ===; done | tee -a $1.print
