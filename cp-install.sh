@@ -4,5 +4,5 @@ for x in scripts/*;do
 done
 
 mkdir -p /usr/local/competitive-programming/notebook
-cat > /usr/local/competitive-programming/notebook/template.py <<EOF
-cat > /usr/local/competitive-programming/notebook/template.cpp <<EOF
+touch /usr/local/competitive-programming/notebook/template.py 
+touch /usr/local/competitive-programming/notebook/template.cpp
