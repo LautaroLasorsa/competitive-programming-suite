@@ -1,7 +1,7 @@
-if $1 == "python" then
-    cp /usr/local/notebook/competitive-programming/template.py $2 
-end
-
-if $1 == "cpp" then
-    cp /usr/local/notebook/competitive-programming/template.cpp $2
-end
+if [ "$1" = "python" ]; then
+    cp /usr/local/notebook/competitive-programming/template.py  "$2"
+elif [ "$1" = "cpp" ]; then
+    cp /usr/local/notebook/competitive-programming/template.cpp "$2"
+else
+    echo "Invalid language"
+fi

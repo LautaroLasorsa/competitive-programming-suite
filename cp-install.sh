@@ -3,6 +3,6 @@ for x in scripts/*;do
     cp $x /usr/local/bin/
 done
 
-mkdir /usr/local/competitive-programming/notebook
+mkdir -r /usr/local/competitive-programming/notebook
 cat > /usr/local/competitive-programming/notebook/template.py <<EOF
 cat > /usr/local/competitive-programming/notebook/template.cpp <<EOF
