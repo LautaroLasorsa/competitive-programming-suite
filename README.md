@@ -5,7 +5,7 @@
 Para lanzar el paquete ejecute en consola (WSL para usuarios Windows)
 
 ```
-    git clone 
-    cd 
+    gh repo clone LautaroLasorsa/competitive-programming-suite
+    cd competitive-programming-suit 
     bash cp-install.sh
 ```
