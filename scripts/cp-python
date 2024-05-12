@@ -1,1 +1,8 @@
-cp $1.py $1.print; for x in $1*.in; do echo ARCHIVO: $x; cat $x; echo ===; python3 $1.py<$x; echo ===; done | tee -a $1.print
+cp $1.cpp $1.print; 
+for x in $1*.in; do 
+    echo "$(tput setaf 2)ARCHIVO: $x" 
+    echo "$(tput setaf 2)$(cat $x)"
+    echo "$(tput sgr0)======"
+    echo "$(tput setaf 1)$(python3 $1 < $x)$(tput sgr0)"
+    echo "======"
+done | tee -a $1.print
