@@ -1,6 +1,8 @@
-for x in scripts/*;do
+cd scripts/
+
+for x in *.sh;do
     chmod +x $x
-    cp $x /usr/local/bin/
+    cp $x "/usr/local/bin/${x%.*}"
 done
 
 mkdir -p /usr/local/competitive-programming/notebook
