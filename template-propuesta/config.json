@@ -1,0 +1,13 @@
+{ 
+    "name": "nombre",
+    "title": "nombre completo",
+    
+    // En caso de que el problema tenga subtareas, para cada una se debe indicar
+    // el puntaje que vale como primer parametro y una regex que acepte el titulo
+    // de los casos de esa subtarea como segundo.
+    // Si siguen el formato la subtarea i se reconoce con S.i1.*E.in
+
+    "score_parameters": [
+        [1, "S.*1.*E.in"]
+    ]
+}
