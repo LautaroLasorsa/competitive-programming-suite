@@ -1,16 +1,33 @@
 cd scripts/
 
-CP="/home/competitive-programming"
+CP="$HOME/competitive-programming"
 
-mkdir -p $CP/scripts
+mkdir -p $CP/bin
 mkdir -p $CP/notebook
 touch $CP/notebook/template.py 
 touch $CP/notebook/template.cpp
 
-
-for x in *.sh;do
-    chmod +x $x
-    cp $x "$CP/scripts/${x%.*}"
+for ext in sh py; do
+    for x in *.$ext;do
+        chmod +x $x
+        cp $x "$CP/bin/${x%.*}"
+    #    cp $x "$HOME/.local/bin/${x%.*}"
+    done
 done
 
-export PATH="PATH:$CP/scripts"
+cd ..
+
+cp -r -p auxiliares "$CP/aux-bin"
+
+# Verifica si el directorio ya está en el PATH
+if [[ ":$PATH:" != *":$CP:"* ]]; then
+    # Si no está, agrega el directorio al PATH
+    echo "export PATH=\"$CP:\$PATH\"" >> "$HOME/.bashrc"
+    echo "export PATH=\"$CP/bin:\$PATH\"" >> "$HOME/.bashrc"
+    echo "CP=\"$CP\"" >> "$HOME/.bashrc"
+
+    export $CP
+    export PATH="$PATH:$CP:$CP/bin"
+fi
+
+cp -r -p template-propuesta "$CP/"

@@ -1,5 +1,5 @@
 
-cd /usr/local/competitive-programming/
+cd "$CP"
 if [ "$1" = "vasito" ]; then
     if [! -d "icpc-team-notebook-el-vasito" ]; then
     sudo git clone https://github.com/mhunicken/icpc-team-notebook-el-vasito.git

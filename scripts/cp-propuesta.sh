@@ -1,0 +1,1 @@
+cp -r -p "$CP/template-propuesta" "$1"

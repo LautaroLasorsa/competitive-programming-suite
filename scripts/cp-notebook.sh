@@ -1,2 +1,2 @@
- cd /usr/local/competitive-programming/notebook
+ cd "$CP/notebook"
  code .
