@@ -7,7 +7,7 @@ if [ "$1" = "vasito" ]; then
     cd icpc-team-notebook-el-vasito/
     code .
 else
-    echo "Lista de notebooks disponibles:
+    echo "Listas de notebooks disponibles:
         vasito : Notebook del equipo de ICPC GGDem de la Universidad Nacional de Córdoba (UNC)
     "
 fi
