@@ -15,8 +15,7 @@ Para instalar el paquete ejecute en consola (WSL para usuarios Windows)
 Esto además creara los siguientes archivos y directorios:
 ```sh
     $HOME/competitive-programming/
-    $HOME/competitive-programming/bin/ # Donde se guardan los scripts
-    $HOME/competitive-programming/aux-bin/ # Modulos auxiliares para los scripts de /bin/
+    $HOME/competitive-programming/bin/ # Donde se guardan los scripts y sus modulos auxiliares
     $HOME/competitive-programming/notebook/
     $HOME/competitive-programming/notebook/template.cpp
     $HOME/competitive-programming/notebook/template.py
@@ -113,7 +112,7 @@ Se incluye una carpeta template-propuesta que se copia en la carpeta ```$HOME/co
 
 * corrector: Un archivo C++, Python o Java que dado un caso de prueba, la respuesta de la solución oficial. Este archivo es opcional, de no estar se considerará si una salida es correcta si y solo si es igual a la producida por la solución oficial.
 
-* enunciado.md : Un archivo markdown que sirve de plantilla para escribir el enunciado del problema.
+* enunciado.md : Un archivo MarkDown que sirve de plantilla para escribir el enunciado del problema.
 
 Además, se ofrecen los siguientes comandos:
 
@@ -142,6 +141,4 @@ operaciones disponibles:
 
 Es importante tener en cuenta que cp-ptoolkit se debe ejecutar en la raíz de un directorio con la estructura de template-propuesta y solo garantiza funcionar correctamente si la estructura.
 
-Además, tomará como solución de referencia a la primera en orden lexicografico de la carpeta soluciones. Por eso, por ejemplo, se le puede poner 00 como prefijo a la solución que queremos que sea utilizada como referencia.
-
-
+Además, tomará como solución de referencia a la primera en orden lexicográfico de la carpeta soluciones. Por eso, por ejemplo, se le puede poner 00 como prefijo a la solución que queremos que sea utilizada como referencia.

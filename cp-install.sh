@@ -17,7 +17,7 @@ done
 
 cd ..
 
-cp -r -p auxiliares "$CP/aux-bin"
+cp -r -p auxiliares/* "$CP/bin"
 
 # Verifica si el directorio ya está en el PATH
 if [[ ":$PATH:" != *":$CP:"* ]]; then

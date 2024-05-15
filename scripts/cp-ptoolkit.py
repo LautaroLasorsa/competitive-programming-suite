@@ -31,10 +31,7 @@ import subprocess, sys
 import os, time
 from sys import argv
 import importlib.util
-
-spec = importlib.util.spec_from_file_location("run", "../aux-bin/run.py")
-run = importlib.util.module_from_spec(spec)
-
+import run
 import re
 assert sys.version_info.major >= 3
 
