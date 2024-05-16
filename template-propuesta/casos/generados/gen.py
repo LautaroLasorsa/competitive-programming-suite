@@ -2,6 +2,7 @@ import random
 import string
 from dataclasses import dataclass
 from random import randint
+from tqdm import tqdm # pip install tqdm
 
 random.seed(832493274)
 
@@ -58,7 +59,7 @@ def write_casos():
     per_case = dict()
     for subtask in range(1, SUBTAREAS+1):
         per_case[subtask] = 0
-    for caso in CASOS:
+    for caso in tqdm(CASOS):
         for subtask in range(1, SUBTAREAS+1):
             if caso.subtask(subtask):
                 per_case[subtask] += 1

@@ -11,6 +11,5 @@ if [ "$2" = "" ] || [ "$2" = "run" ]; then
         echo "$(tput setaf 1)$(tput bold)$(./"$1" < "$x")$(tput sgr0)"
         echo "$(tput bold)============"
     done | tee -a $1.print
+    sed -i $'s/\x1b\\[[0-9;]*[mGK]//g' "$1.print"
 fi
-
-sed -i $'s/\x1b\\[[0-9;]*[mGK]//g' "$1.print"

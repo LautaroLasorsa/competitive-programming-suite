@@ -1,4 +1,4 @@
-#!/usr/bin/python3 -B
+#!/usr/bin/env python
 '''MIT License
 
 Copyright (c) 2017 Martin Villagra
@@ -23,6 +23,7 @@ SOFTWARE.
 
 Modified by Carlos Miguel Soto in 2023
 Modified by Agustin Santiago Gutierrez in 2018-2024
+Modified by Lautaro Lasorsa in 2024
 '''
 from __future__ import print_function
 from collections import defaultdict
@@ -34,6 +35,25 @@ import importlib.util
 import run
 import re
 assert sys.version_info.major >= 3
+
+RESET = '\x1b[0m'
+BOLD = '\x1b[1m'
+UNDERLINE = '\x1b[4m'
+RED = '\x1b[31m'
+GREEN = '\x1b[32m'
+YELLOW = '\x1b[33m'
+BLUE = '\x1b[34m'
+
+try:
+    if "--verbose" not in argv:
+        def tqdm(x):
+            return x
+    else:
+        from tqdm import tqdm
+except ImportError:
+    print(BOLD + RED + f"No se pudo importar tqdm en el entorno {sys.version} {os.getenv('VIRTUAL_ENV')}" + RESET)
+    def tqdm(x):
+            return x
 
 VERSION = "1.5"
 DEFAULT_TIME_LIMIT = 4
@@ -120,7 +140,7 @@ def listar_archivos_en(nombredir, criterio):
 
 def limpiar():
     def borrar_archivos_en(nombredir, criterio):
-        for x in listar_archivos_en(nombredir, criterio):
+        for x in tqdm(listar_archivos_en(nombredir, criterio)):
             os.remove(x)
     temp_tex = lambda x: obtener_ext(x) in [".bak", ".aux", ".log", ".sav", ".fdb_latexmk", ".fls"] 
     borrar_archivos_en("img", temp_tex)
@@ -218,7 +238,7 @@ def generar_salidas_en(fdir):
             ref_exe = os.path.abspath(compilar(ref_src))
         except ErrorCompilacion:
             print(RESET + BOLD + RED + "Fallo compilacion")
-        for entrada in sorted(listar_archivos_en(fdir, lambda x: obtener_ext(x)==IN_EXT)):
+        for entrada in tqdm(sorted(listar_archivos_en(fdir, lambda x: obtener_ext(x)==IN_EXT))):
             salida = os.path.splitext(entrada)[0]+DAT_EXT
             try:
                     ejecutar(ref_exe, entrada, salida)
@@ -237,7 +257,7 @@ def generar():
         generar_salidas_en(CASDIR)
 
     # Busca y compila el corrector
-    for ext in EJECUTABLES:
+    for ext in tqdm(EJECUTABLES):
         if os.path.isfile(CORNOMBRE+ext):
             print(RESET + BOLD + "Compilando corrector " + decir_nombre(CORNOMBRE+ext))
             compilar(CORNOMBRE+ext, True)
@@ -364,7 +384,7 @@ def resolver():
     casos = obtener_todos_los_casos()
     checker_path = CORNOMBRE+DEFAULT_EXE_EXT
     checker = os.path.abspath(checker_path) if os.path.isfile(checker_path) else None
-    for x in sorted(listar_archivos_en(SOLDIR, lambda x: obtener_ext(x) in EJECUTABLES and os.path.basename(os.path.splitext(x)[0])!=REFSOL)):
+    for x in tqdm(sorted(listar_archivos_en(SOLDIR, lambda x: obtener_ext(x) in EJECUTABLES and os.path.basename(os.path.splitext(x)[0])!=REFSOL))):
         time_limit = DEFAULT_TIME_LIMIT
         print(RESET + BOLD + "Solucion " + decir_nombre(os.path.basename(x)))
         try:
@@ -373,7 +393,7 @@ def resolver():
             maxtime = 0
             pts = 0.0
             stats = ResultadosEjecucion()
-            for nombre, entrada, salida in casos:
+            for nombre, entrada, salida in tqdm(casos):
                 res = run.run_solution(comando[0], comando[1:], entrada, None, salida, time_limit, checker=checker)
                 if res.status != "TLE": maxtime = max(maxtime, res.running_time)
                 pts += res.pts
@@ -459,14 +479,6 @@ def cd(path):
 
 class ErrorCompilacion(Exception):
     pass
-        
-RESET = '\x1b[0m'
-BOLD = '\x1b[1m'
-UNDERLINE = '\x1b[4m'
-RED = '\x1b[31m'
-GREEN = '\x1b[32m'
-YELLOW = '\x1b[33m'
-BLUE = '\x1b[34m'
 
 def decir_nombre(name):
     return YELLOW + BOLD + "[" + name + "]"

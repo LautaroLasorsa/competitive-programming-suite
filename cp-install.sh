@@ -1,12 +1,12 @@
-cd scripts/
-
 CP="$HOME/competitive-programming"
 
 mkdir -p $CP/bin
 mkdir -p $CP/notebook
 touch $CP/notebook/template.py 
 touch $CP/notebook/template.cpp
+cp -p -r template-propuesta $CP/template-propuesta 
 
+cd scripts/
 for ext in sh py; do
     for x in *.$ext;do
         chmod +x $x

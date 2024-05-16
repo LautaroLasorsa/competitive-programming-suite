@@ -1,8 +1,8 @@
 
 cd "$CP"
 if [ "$1" = "vasito" ]; then
-    if [! -d "icpc-team-notebook-el-vasito" ]; then
-    sudo git clone https://github.com/mhunicken/icpc-team-notebook-el-vasito.git
+    if [ ! -d "icpc-team-notebook-el-vasito" ]; then
+        git clone https://github.com/mhunicken/icpc-team-notebook-el-vasito.git
     fi 
     cd icpc-team-notebook-el-vasito/
     code .
