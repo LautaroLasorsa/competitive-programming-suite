@@ -7,7 +7,7 @@ from tqdm import tqdm # pip install tqdm
 random.seed(832493274)
 
 SUBTAREAS = 7
-
+EJEMPLOS = 0 # Si van a crear ejemplos numerenlos de 1 a EJEMPLOS
 def toalpha(i: int) -> str:
     if i < 10:
         return str(i)
@@ -55,7 +55,7 @@ CASOS: list[Caso] = [
 ]
 
 def write_casos():
-    i = 0
+    i = EJEMPLOS
     per_case = dict()
     for subtask in range(1, SUBTAREAS+1):
         per_case[subtask] = 0

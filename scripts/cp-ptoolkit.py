@@ -56,7 +56,7 @@ except ImportError:
             return x
 
 VERSION = "1.5"
-DEFAULT_TIME_LIMIT = 4
+DEFAULT_TIME_LIMIT = 10
 CASDIR = "casos"
 GENDIR = os.path.join("casos", "generados")
 VERDIR = os.path.join("casos", "verificadores")
@@ -257,7 +257,7 @@ def generar():
         generar_salidas_en(CASDIR)
 
     # Busca y compila el corrector
-    for ext in tqdm(EJECUTABLES):
+    for ext in EJECUTABLES:
         if os.path.isfile(CORNOMBRE+ext):
             print(RESET + BOLD + "Compilando corrector " + decir_nombre(CORNOMBRE+ext))
             compilar(CORNOMBRE+ext, True)
@@ -384,7 +384,7 @@ def resolver():
     casos = obtener_todos_los_casos()
     checker_path = CORNOMBRE+DEFAULT_EXE_EXT
     checker = os.path.abspath(checker_path) if os.path.isfile(checker_path) else None
-    for x in tqdm(sorted(listar_archivos_en(SOLDIR, lambda x: obtener_ext(x) in EJECUTABLES and os.path.basename(os.path.splitext(x)[0])!=REFSOL))):
+    for x in sorted(listar_archivos_en(SOLDIR, lambda x: obtener_ext(x) in EJECUTABLES and os.path.basename(os.path.splitext(x)[0])!=REFSOL)):
         time_limit = DEFAULT_TIME_LIMIT
         print(RESET + BOLD + "Solucion " + decir_nombre(os.path.basename(x)))
         try:
