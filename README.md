@@ -98,6 +98,14 @@ Si se llama
 
 Lista los notebooks disponibles y una breve descripción de cada uno.
 
+## cp-update-notebooks
+
+Actualiza todos los notebooks que se hayán descargado a su versión más reciente.
+
+```sh
+    cp-update-notebooks
+```
+
 # Material para desarrolladores de problemas
 
 Se incluye una carpeta template-propuesta que se copia en la carpeta ```$HOME/competitive-programming``` y tiene la siguiente estructura.
