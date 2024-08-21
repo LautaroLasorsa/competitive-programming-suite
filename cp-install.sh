@@ -1,5 +1,6 @@
 CP="$HOME/competitive-programming"
 
+cp README.pdf "$CP/README.pdf"
 mkdir -p $CP/bin
 mkdir -p $CP/notebook
 touch $CP/notebook/template.py 
@@ -31,4 +32,5 @@ if [[ ":$PATH:" != *":$CP:"* ]]; then
 fi
 
 cp -r -p template-propuesta "$CP/"
+
 echo "Competitive programming suite se ha instalado exitosamente."

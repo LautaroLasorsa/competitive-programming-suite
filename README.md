@@ -15,6 +15,7 @@ Para instalar el paquete ejecute en consola (WSL para usuarios Windows)
 Esto además creara los siguientes archivos y directorios:
 ```sh
     $HOME/competitive-programming/
+    $HOME/competitive-programming/README.pdf # Este archivo en formato pdf
     $HOME/competitive-programming/bin/ # Donde se guardan los scripts y sus modulos auxiliares
     $HOME/competitive-programming/notebook/
     $HOME/competitive-programming/notebook/template.cpp
@@ -28,10 +29,25 @@ Y creará la variable de entorno **$CP** que contiene la dirección de la carpet
     cd $CP
 ```
 
-A su vez se creará el comando **cp-update** que permite actualizar el paquete a su última versión.
+# Comandos generales
+
+Estos son los comandos que serán útiles para cualquiera que utilice este paquete.
+
+## cp-update
+
+Este comando, que no lleva argumentos, actualiza el paquete a su última versión. 
 
 ```sh
     cp-update
+
+```
+
+## cp-help
+
+Este comando, que no lleva argumento, abre el archivo README.pdf (este archivo) en VSCODE.
+
+```sh
+    cp-help
 ```
 
 # Comandos para competidores
