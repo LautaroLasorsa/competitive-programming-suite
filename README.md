@@ -22,10 +22,16 @@ Esto además creara los siguientes archivos y directorios:
     $HOME/competitive-programming/template-propuesta/
 ```
 
-Y creará la variable de entorno $CP que contiene la dirección de la carpeta ```$HOME/competitive-programming```. Se puede navegar directamente a esta carpeta haciendo
+Y creará la variable de entorno **$CP** que contiene la dirección de la carpeta ```$HOME/competitive-programming```. Se puede navegar directamente a esta carpeta haciendo
 
 ```sh
     cd $CP
+```
+
+A su vez se creará el comando **cp-update** que permite actualizar el paquete a su última versión.
+
+```sh
+    cp-update
 ```
 
 # Comandos para competidores

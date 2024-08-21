@@ -31,3 +31,4 @@ if [[ ":$PATH:" != *":$CP:"* ]]; then
 fi
 
 cp -r -p template-propuesta "$CP/"
+echo "Competitive programming suite se ha instalado exitosamente."
