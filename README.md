@@ -1,3 +1,13 @@
+<center>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" height=80/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+  height=80 />
+     
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg" height=80/>
+               
+</center>
+
+          
 # competitive-programming-suite
 
  Un paquete de instalación de comandos útiles para programación competitiva
