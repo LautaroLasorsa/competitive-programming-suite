@@ -93,6 +93,27 @@ Ejecuta el archivo A.py contra todos los archivos A*.in
 
 Además, crea un archivo A.print que contiene el código ejecutado y todo lo mostrado por consola.
 
+## cp-kt
+
+Este comando permite compilar y ejecutar contra los casos de prueba un archivo kt (Kotlin) 
+
+```sh
+    cp-kt A
+```
+
+Compila el archivo A.cpp y lo ejecuta contra todos los archivos A*.in
+
+Además, crea un archivo A.print que contiene el código ejecutado y todo lo mostrado por consola.
+
+Se puede agregar un segundo parámetro opcional, para indicar si queremos solo compilar el archivo (generando el ejecutable por la JVM A) o solo correr el ejecutable contra los casos de prueba.
+
+```sh
+    cp-kt A build # Compilar
+    cp-kt A run   # Ejecutar
+```
+
+Solo la parte de Ejecutar crea el archivo A.print
+
 ## cp-notebook
 
 Este comando abre la carpeta ```/usr/local/competitive-programming/notebook``` en VS CODE.
