@@ -25,6 +25,17 @@ if [ "$1" = "python-unlam" ] || [ "$1" = "all" ]; then
     fi
 fi
 
+if [ "$1" = "kotlin-unlam" ] || [ "$1" = "all" ]; then
+    if [ ! -d "notebook-kotlin-python" ]; then
+        git clone https://github.com/LautaroLasorsa/notebook-unlam-kotlin.git
+    fi
+    if [ "$1" != "all" ];then
+        cd notebook-unlam-kotlin/
+        code .
+    algun_notebook=true
+    fi
+fi
+
 if [ "$1" = "all" ]; then
     echo "Todos los notebooks han sido descargados."
     code .
@@ -35,5 +46,6 @@ if [ "$algun_notebook" = false ]; then
         all: Descarga todos los notebooks disponibles.
         vasito : Notebook del equipo de ICPC GGDem de la Universidad Nacional de Córdoba (UNC)
         python-unlam : Notebook realizado para los equipos formados en el curso ICPC UNLaM (Universidad Nacional de La Matanza) que decidieron utilizar Python.
+        kotlin-unlam : Notebook realizado para los equipos formados en el curso ICPC UNLaM (Universidad Nacional de La Matanza) que decidieron utilizar Kotlin.
     "
 fi
