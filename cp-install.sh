@@ -3,8 +3,11 @@ CP="$HOME/competitive-programming"
 cp README.pdf "$CP/README.pdf"
 mkdir -p $CP/bin
 mkdir -p $CP/notebook
-touch $CP/notebook/template.py 
-touch $CP/notebook/template.cpp
+
+for ext in py cpp kt; do
+    touch "$CP/notebook/template.$ext"
+done
+
 cp -p -r template-propuesta $CP/template-propuesta 
 
 cd scripts/
@@ -31,6 +34,11 @@ if [[ ":$PATH:" != *":$CP:"* ]]; then
     export PATH="$PATH:$CP:$CP/bin"
 fi
 
+# Crea aliases para poder utilizar los comandos con distintos nombres
+echo "alias cp-py='cp-python'" >> "$HOME/.bashrc"
+echo "alias cp-kt='cp-kotlin'" >> "$HOME/.bashrc"
+
 cp -r -p template-propuesta "$CP/"
 
-echo "Competitive programming suite se ha instalado exitosamente."
+echo -e "\e[1;32mCompetitive programming suite se ha instalado exitosamente.\e[0m"
+source "$HOME/.bashrc"

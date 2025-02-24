@@ -125,6 +125,7 @@ Recibe un parametro opcional para indicar si utilizar el template de C++ o de Py
 ```sh
     cp-template cpp A      # Copia template.cpp en A.cpp
     cp-template python A   # Copia template.py en A.py
+    cp-template kt A       # Copia template.kt en A.kt
 ```
 
 Tener en cuenta que los templates instalados originalmente son archivos en blanco y hay que poner lo que queramos en ellos.
