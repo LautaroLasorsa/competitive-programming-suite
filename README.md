@@ -26,6 +26,7 @@ Esto además creara los siguientes archivos y directorios:
     $HOME/competitive-programming/notebook/
     $HOME/competitive-programming/notebook/template.cpp
     $HOME/competitive-programming/notebook/template.py
+    $HOME/competitive-programming/notebook/template.kt
     $HOME/competitive-programming/template-propuesta/
 ```
 
