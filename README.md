@@ -101,7 +101,7 @@ Este comando permite compilar y ejecutar contra los casos de prueba un archivo k
     cp-kt A
 ```
 
-Compila el archivo A.cpp y lo ejecuta contra todos los archivos A*.in
+Compila el archivo A.kt y lo ejecuta contra todos los archivos A*.in
 
 Además, crea un archivo A.print que contiene el código ejecutado y todo lo mostrado por consola.
 
