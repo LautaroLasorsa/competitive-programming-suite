@@ -82,11 +82,12 @@ Se puede agregar un segundo parámetro opcional, para indicar si queremos solo c
 
 Solo la parte de Ejecutar crea el archivo A.print
 
-## cp-python
+## cp-py = cp-python
 
 Este comando permite ejecutar contra todos los casos de prueba un archivo .py (Python 3)
 
 ```sh
+    cp-py A
     cp-python A
 ```
 
@@ -94,12 +95,13 @@ Ejecuta el archivo A.py contra todos los archivos A*.in
 
 Además, crea un archivo A.print que contiene el código ejecutado y todo lo mostrado por consola.
 
-## cp-kt
+## cp-kt = cp-kotlin
 
 Este comando permite compilar y ejecutar contra los casos de prueba un archivo kt (Kotlin) 
 
 ```sh
     cp-kt A
+    cp-kotlin A
 ```
 
 Compila el archivo A.kt y lo ejecuta contra todos los archivos A*.in
@@ -121,11 +123,15 @@ Este comando abre la carpeta ```/usr/local/competitive-programming/notebook``` e
 
 ## cp-template
 
-Recibe un parametro opcional para indicar si utilizar el template de C++ o de Python.
+Recibe un parametro opcional para indicar si utilizar el template de C++, de Python o de Kotlin.
+
+Python y Kotlin tienen 2 alias, py o python el primero, y kt o kotlin el segundo.
 
 ```sh
     cp-template cpp A      # Copia template.cpp en A.cpp
     cp-template python A   # Copia template.py en A.py
+    cp-template py A       # Copia template.py en A.py
+    cp-template kotlin A   # Copia template.kt en A.kt
     cp-template kt A       # Copia template.kt en A.kt
 ```
 
