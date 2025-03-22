@@ -29,7 +29,7 @@ if [[ ":$PATH:" != *":$CP:"* ]]; then
     # Si no está, agrega el directorio al PATH
     echo "export PATH=\"$CP:\$PATH\"" >> "$HOME/.bashrc"
     echo "export PATH=\"$CP/bin:\$PATH\"" >> "$HOME/.bashrc"
-    echo "CP=\"$CP\"" >> "$HOME/.bashrc"
+    echo "export CP=\"$CP\"" >> "$HOME/.bashrc"
 
     export CP=$CP
     export PATH="$PATH:$CP:$CP/bin"
