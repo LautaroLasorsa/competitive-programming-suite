@@ -1,4 +1,5 @@
 CP="$HOME/competitive-programming"
+mkdir -p $CP
 
 cp README.pdf "$CP/README.pdf"
 mkdir -p $CP/bin
@@ -30,7 +31,7 @@ if [[ ":$PATH:" != *":$CP:"* ]]; then
     echo "export PATH=\"$CP/bin:\$PATH\"" >> "$HOME/.bashrc"
     echo "CP=\"$CP\"" >> "$HOME/.bashrc"
 
-    export $CP
+    export CP=$CP
     export PATH="$PATH:$CP:$CP/bin"
 fi
 
