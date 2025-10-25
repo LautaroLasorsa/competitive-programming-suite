@@ -17,7 +17,7 @@ Para instalar el paquete ejecute en consola (WSL para usuarios Windows)
 
 ```sh
     git clone https://github.com/LautaroLasorsa/competitive-programming-suite.git
-    cd competitive-programming-suit 
+    cd competitive-programming-suite 
     bash cp-install.sh
 ```
 
